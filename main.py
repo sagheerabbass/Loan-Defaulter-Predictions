@@ -26,3 +26,12 @@ print('Accuracy Score : \n',accuracy_score(y_test,y_pred))
 print('\n Classification Report: \n',classification_report(y_test,y_pred))
 print('\n Confusion Matrix: \n',confusion_matrix(y_test,y_pred))
 
+# Making Predictions for New Applicant
+new_applicant = [[30000, 15000, 600]]  # Income, Loan_Amount, Credit_Score
+prediction = RVC.predict(new_applicant)
+
+if prediction[0] == 1:
+    print("\n🔴 The applicant is likely to DEFAULT on the loan.")
+else:
+    print("\n🟢 The applicant is likely to REPAY the loan.")
+
